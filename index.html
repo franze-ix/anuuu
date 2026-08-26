@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Anuuuuuuu 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,180,210,.5), transparent 30%),
+        linear-gradient(135deg, #fff0f6, #ffd6e7, #ffeaf3);
+
+    color: #5b4050;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 1s ease,
+        opacity 1s ease,
+        visibility 0s linear 1s;
+}
+
+/* Only the current page is visible */
+.page.active {
+    transform: translateX(0);
+    opacity: 1;
+
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        transform 1s ease,
+        opacity 1s ease,
+        visibility 0s;
+}
+.page {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 1s ease,
+        opacity 1s ease,
+        visibility 0s linear 1s;
+}
+
+/* Only the current page is visible */
+.page.active {
+    transform: translateX(0);
+    opacity: 1;
+
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        transform 1s ease,
+        opacity 1s ease,
+        visibility 0s;
+}
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.small-title {
+    font-size: 18px;
+    color: #e86b9a;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.main-title {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 70px);
+    color: #e94f8a;
+    line-height: 1.05;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: clamp(17px, 3vw, 23px);
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: #e94f8a;
+    font-weight: bold;
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.photo {
+    width: 145px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 22px;
+    padding: 7px;
+    background: white;
+    box-shadow: 0 15px 35px rgba(214, 76, 128, .22);
+}
+
+.photo:first-child {
+    transform: rotate(-7deg);
+}
+
+.photo:last-child {
+    transform: rotate(7deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* =========================
+   SURPRISE BOX
+========================= */
+
+.box-area {
+    margin-top: 5px;
+}
+
+.box {
+    position: relative;
+    width: 130px;
+    height: 105px;
+    margin: 0 auto 20px;
+    cursor: pointer;
+    animation: boxFloat 2.5s ease-in-out infinite;
+}
+
+.box-body {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 120px;
+    height: 75px;
+    background: #f47ca8;
+    border-radius: 8px;
+    box-shadow: 0 12px 25px rgba(210, 75, 130, .3);
+}
+
+.box-body::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+    background: #ffd166;
+}
+
+.box-lid {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 130px;
+    height: 28px;
+    background: #f06298;
+    border-radius: 8px;
+    z-index: 2;
+    transition: transform .8s ease;
+}
+
+.box-lid::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 28px;
+    background: #ffd166;
+}
+
+.box-bow {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    z-index: 4;
+}
+
+.box.open .box-lid {
+    transform: translateY(-55px) rotate(-5deg);
+}
+
+@keyframes boxFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.ready {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.open-btn {
+    border: none;
+    background: linear-gradient(135deg, #ef5f98, #d9407c);
+    color: white;
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(220, 65, 125, .3);
+    transition: .3s ease;
+}
+
+.open-btn:hover {
+    transform: scale(1.07);
+}
+
+/* =========================
+   FLOATING DECORATION
+========================= */
+
+.float {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    opacity: .6;
+    animation: floatUp linear infinite;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    85% {
+        opacity: .7;
+    }
+
+    to {
+        transform: translateY(-15vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   PAGE 2 — BIRTHDAY
+========================= */
+
+.birthday-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: flex-start;
+    padding-top: 50px;
+    padding-bottom: 100px;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.9), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(255,190,215,.5), transparent 30%),
+        linear-gradient(135deg, #fff1f7, #ffd9e8, #fff0f6);
+}
+
+/* THEN paste the rest of my Page 2 CSS here */
+/* =========================
+   PAGE 2 — BIRTHDAY
+========================= */
+
+.birthday-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: flex-start;
+    padding-top: 50px;
+    padding-bottom: 100px;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.9), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(255,190,215,.5), transparent 30%),
+        linear-gradient(135deg, #fff1f7, #ffd9e8, #fff0f6);
+}
+
+.birthday-container {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.birthday-intro {
+    font-size: 18px;
+    color: #d95b8b;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: page2Fade 1s ease forwards;
+}
+
+.birthday-intro:nth-child(2) {
+    animation-delay: .4s;
+}
+
+.birthday-title {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 9vw, 78px);
+    line-height: 1.05;
+    color: #e84c88;
+    margin: 25px 0 10px;
+
+    opacity: 0;
+    transform: scale(.8);
+    animation: birthdayPop 1.2s .8s ease forwards;
+}
+
+.birthday-title span {
+    display: block;
+    color: #d93678;
+}
+
+.bestie-tag {
+    display: inline-block;
+    background: white;
+    color: #df4b83;
+    padding: 9px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 10px 0 30px;
+
+    box-shadow: 0 8px 20px rgba(220,70,130,.15);
+
+    opacity: 0;
+    animation: page2Fade 1s 1.5s ease forwards;
+}
+
+
+/* PHOTO */
+
+.birthday-photo-wrapper {
+    position: relative;
+    width: 240px;
+    height: 285px;
+    margin: 10px auto 45px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: photoAppear 1.2s 1.8s ease forwards;
+}
+
+.birthday-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    padding: 9px;
+    background: white;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 45px rgba(210,70,130,.25);
+
+    transform: rotate(-3deg);
+}
+
+
+/* SPARKLES */
+
+.sparkle {
+    position: absolute;
+    z-index: 5;
+    font-size: 30px;
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+.sparkle1 {
+    top: -15px;
+    right: -25px;
+}
+
+.sparkle2 {
+    bottom: 15px;
+    left: -35px;
+    animation-delay: .6s;
+}
+
+.sparkle3 {
+    top: 45%;
+    right: -45px;
+    animation-delay: 1s;
+}
+
+@keyframes sparkleFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(15deg);
+    }
+}
+
+
+/* WISH CARDS */
+
+.wishes {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+}
+
+.wish-card {
+    background: rgba(255,255,255,.88);
+
+    border: 2px solid rgba(238,115,160,.18);
+
+    border-radius: 24px;
+
+    padding: 25px 25px 25px 65px;
+
+    text-align: left;
+
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(210,70,130,.10);
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    animation: wishAppear .8s ease forwards;
+}
+
+
+/* Stagger the wishes */
+
+.wish-card:nth-child(1) {
+    animation-delay: 2.3s;
+}
+
+.wish-card:nth-child(2) {
+    animation-delay: 2.6s;
+}
+
+.wish-card:nth-child(3) {
+    animation-delay: 2.9s;
+}
+
+.wish-card:nth-child(4) {
+    animation-delay: 3.2s;
+}
+
+.wish-card:nth-child(5) {
+    animation-delay: 3.5s;
+}
+
+.wish-card:nth-child(6) {
+    animation-delay: 3.8s;
+}
+
+.wish-card:nth-child(7) {
+    animation-delay: 4.1s;
+}
+
+.wish-card:nth-child(8) {
+    animation-delay: 4.4s;
+}
+
+.wish-card:nth-child(9) {
+    animation-delay: 4.7s;
+}
+
+.wish-card:nth-child(10) {
+    animation-delay: 5s;
+}
+
+
+.wish-card p {
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.wish-card strong {
+    color: #df4b83;
+}
+
+
+/* ICON */
+
+.wish-icon {
+    position: absolute;
+
+    left: 18px;
+    top: 23px;
+
+    font-size: 28px;
+}
+
+
+/* SPECIAL FRIENDSHIP CARD */
+
+.friendship-card {
+    border: 2px solid #f18ab3;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.95),
+            rgba(255,236,245,.95)
+        );
+}
+
+
+/* FINAL WISH */
+
+.final-wish {
+    text-align: center;
+    padding: 30px 22px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.95),
+        rgba(255,225,238,.95)
+    );
+}
+
+.final-wish .wish-icon {
+    position: static;
+    margin-bottom: 10px;
+}
+
+.final-wish h2 {
+    color: #df3f7c;
+    font-family: Georgia, serif;
+    margin-top: 20px;
+    font-size: 27px;
+    line-height: 1.3;
+}
+
+
+/* MEMORY BUTTON */
+
+.memory-question {
+    margin-top: 80px;
+    padding: 35px 20px;
+}
+
+.memory-question p {
+    font-size: 18px;
+    color: #d85a8a;
+}
+
+.memory-question h2 {
+    font-family: Georgia, serif;
+    color: #df3f7c;
+    font-size: 30px;
+    margin: 12px 0 25px;
+}
+
+#memoryBtn {
+    border: none;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ef6099,
+        #d93c79
+    );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(215,60,120,.3);
+
+    transition: .3s ease;
+}
+
+#memoryBtn:hover {
+    transform: scale(1.07);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes page2Fade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes birthdayPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(.7) rotate(-3deg);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+@keyframes photoAppear {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes wishAppear {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .birthday-page {
+        padding-top: 35px;
+    }
+
+    .birthday-title {
+        font-size: 43px;
+    }
+
+    .birthday-photo-wrapper {
+        width: 200px;
+        height: 240px;
+        margin-bottom: 35px;
+    }
+
+    .wish-card {
+        padding: 22px 18px 22px 58px;
+    }
+
+    .wish-card p {
+        font-size: 16px;
+    }
+
+    .wish-icon {
+        left: 15px;
+        font-size: 25px;
+    }
+
+    .memory-question {
+        margin-top: 50px;
+    }
+
+}
+
+/* =========================================================
+   PAGE 3 — OUR MEMORIES
+========================================================= */
+
+.memories-page {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-items: flex-start;
+
+    padding-top: 55px;
+    padding-bottom: 120px;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,255,255,.9),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(255,190,215,.5),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff2f8,
+            #ffddea,
+            #fff0f6
+        );
+}
+
+.memories-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.memory-small-title {
+    color: #d95788;
+    font-size: 18px;
+}
+
+.memories-title {
+    font-family: Georgia, serif;
+    color: #df3f7c;
+    font-size: clamp(45px, 9vw, 75px);
+    margin: 10px 0;
+}
+
+.memories-intro {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #765565;
+}
+
+
+/* MEMORY ITEM */
+
+.memory-item {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    margin: 70px 0;
+
+    text-align: left;
+}
+
+.memory-right {
+    flex-direction: row-reverse;
+}
+
+
+/* PHOTO */
+
+.memory-photo {
+    flex: 0 0 270px;
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 40px rgba(210,70,130,.20);
+
+    transform: rotate(-4deg);
+
+    transition: .4s ease;
+}
+
+.memory-right .memory-photo {
+    transform: rotate(4deg);
+}
+
+.memory-photo:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* MEMORY TEXT */
+
+.memory-text {
+    flex: 1;
+}
+
+.memory-text span {
+    display: inline-block;
+
+    color: #df4b83;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+
+    font-weight: bold;
+}
+
+.memory-text p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #684b59;
+}
+
+
+/* FRIENDSHIP MESSAGE */
+
+.friendship-message {
+    margin: 80px auto;
+
+    max-width: 620px;
+
+    padding: 35px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.9);
+
+    border: 2px solid #f4b0ca;
+
+    box-shadow:
+        0 15px 35px rgba(210,70,130,.12);
+}
+
+.friendship-heart {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.friendship-message p {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    line-height: 1.6;
+
+    color: #d9437d;
+}
+
+
+/* ENDING */
+
+.memory-ending {
+    margin-top: 80px;
+    padding: 30px 20px;
+}
+
+.memory-ending h2 {
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.memory-ending p {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #765565;
+}
+
+
+/* PAGE 4 BUTTON */
+
+.page4-button-area {
+    margin-top: 70px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.page4-button-area p {
+    color: #d95788;
+
+    font-size: 18px;
+}
+
+.page4-button-area h2 {
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 30px;
+
+    margin: 12px 0 25px;
+}
+
+#page4Btn {
+    border: none;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef6099,
+            #d93c79
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(215,60,120,.3);
+
+    transition: .3s ease;
+}
+
+#page4Btn:hover {
+    transform: scale(1.07);
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .memories-page {
+        padding-top: 35px;
+    }
+
+    .memories-title {
+        font-size: 45px;
+    }
+
+    .memories-intro {
+        font-size: 16px;
+
+        padding: 0 15px;
+
+        margin-bottom: 40px;
+    }
+
+    .memory-item,
+    .memory-right {
+        flex-direction: column;
+
+        gap: 25px;
+
+        margin: 55px 0;
+
+        text-align: center;
+    }
+
+    .memory-photo {
+        width: 230px;
+
+        flex: none;
+    }
+
+    .memory-photo img {
+        height: 270px;
+    }
+
+    .memory-text {
+        width: 90%;
+    }
+
+    .memory-text p {
+        font-size: 16px;
+    }
+
+    .friendship-message {
+        margin: 55px 15px;
+    }
+
+    .friendship-message p {
+        font-size: 19px;
+    }
+
+    .memory-ending h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .page {
+        padding: 18px;
+    }
+
+    .photos {
+        gap: 10px;
+    }
+
+    .photo {
+        width: 120px;
+        height: 145px;
+    }
+
+    .main-title {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .ready {
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   PAGE 4 — FINAL PAGE
+========================================================= */
+
+.final-page {
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    align-items: flex-start;
+
+    padding-top: 55px;
+    padding-bottom: 100px;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,255,255,.95),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,190,215,.55),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #ffd7e7,
+            #fff1f7
+        );
+}
+
+.final-container {
+
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.final-small {
+
+    color: #d95788;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
+    animation: finalFade 1s ease;
+}
+
+
+/* =========================
+   BIG TITLE
+========================= */
+
+.final-title {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: clamp(40px, 8vw, 70px);
+
+    line-height: 1.05;
+
+    margin: 30px 0 35px;
+
+    animation: finalTitlePop 1.2s ease;
+}
+
+.final-title span {
+
+    display: block;
+
+    color: #e94f88;
+
+    margin-top: 8px;
+}
+
+.final-title strong {
+
+    display: block;
+
+    font-size: .75em;
+
+    color: #d93678;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   FINAL PHOTO
+========================= */
+
+.final-photo-wrapper {
+
+    position: relative;
+
+    width: 250px;
+    height: 300px;
+
+    margin: 0 auto 50px;
+
+    animation: finalPhotoIn 1.2s .4s ease both;
+}
+
+.final-photo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 45px rgba(210,70,130,.22);
+
+    transform: rotate(-2deg);
+}
+
+
+/* PHOTO DECORATIONS */
+
+.final-decoration {
+
+    position: absolute;
+
+    font-size: 38px;
+
+    z-index: 5;
+
+    animation: decorationFloat 2s ease-in-out infinite;
+}
+
+.final-decoration.left {
+
+    left: -40px;
+    top: 35px;
+}
+
+.final-decoration.right {
+
+    right: -40px;
+    bottom: 35px;
+
+    animation-delay: .7s;
+}
+
+@keyframes decorationFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(12deg);
+    }
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+
+    background: rgba(255,255,255,.9);
+
+    border-radius: 28px;
+
+    padding: 30px 25px;
+
+    box-shadow:
+        0 12px 30px rgba(210,70,130,.10);
+
+    margin-bottom: 35px;
+}
+
+.final-message p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #684b59;
+
+    margin-bottom: 20px;
+}
+
+.final-message p:last-child {
+    margin-bottom: 0;
+}
+
+.final-message strong {
+    color: #df3f7c;
+}
+
+
+/* =========================
+   FOREVER FRIENDSHIP
+========================= */
+
+.forever-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.95),
+            rgba(255,225,238,.95)
+        );
+
+    border: 2px solid #f1a0c2;
+
+    border-radius: 30px;
+
+    padding: 30px 20px;
+
+    margin: 35px 0 60px;
+
+    box-shadow:
+        0 15px 35px rgba(210,70,130,.12);
+}
+
+.forever-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.forever-card h2 {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.forever-card p {
+
+    color: #765565;
+
+    font-size: 18px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   RESPONSE SECTION
+========================= */
+
+.response-section {
+
+    background: rgba(255,255,255,.93);
+
+    border-radius: 30px;
+
+    padding: 35px 25px;
+
+    box-shadow:
+        0 15px 35px rgba(210,70,130,.13);
+
+    margin-bottom: 40px;
+}
+
+.response-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.response-section h2 {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 31px;
+
+    margin-bottom: 12px;
+}
+
+.response-section > p {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #765565;
+
+    margin-bottom: 25px;
+}
+
+
+/* FORM */
+
+#birthday-response-form {
+
+    text-align: left;
+}
+
+#birthday-response-form label {
+
+    display: block;
+
+    color: #df4b83;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+#response {
+
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    border: 2px solid #f2b0ca;
+
+    background: #fffafd;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-size: 16px;
+
+    color: #5b4050;
+
+    outline: none;
+
+    margin-bottom: 15px;
+}
+
+#response:focus {
+
+    border-color: #df5b91;
+
+    box-shadow:
+        0 0 0 4px rgba(223,91,145,.10);
+}
+
+
+#response-submit {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef6099,
+            #d93c79
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(215,60,120,.25);
+
+    transition: .3s ease;
+}
+
+#response-submit:hover {
+
+    transform: scale(1.03);
+}
+
+#response-submit:disabled {
+
+    opacity: .7;
+
+    cursor: wait;
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.response-success {
+
+    display: none;
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 30px;
+
+    padding: 40px 25px;
+
+    box-shadow:
+        0 15px 35px rgba(210,70,130,.13);
+
+    margin-bottom: 40px;
+}
+
+.success-heart {
+
+    font-size: 55px;
+
+    animation: heartBeat 1s infinite;
+}
+
+.response-success h2 {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 32px;
+
+    margin: 15px 0;
+}
+
+.response-success p {
+
+    color: #765565;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+.response-success h3 {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.final-goodbye {
+
+    color: #c86a8d;
+
+    font-size: 14px;
+
+    padding-bottom: 20px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes finalFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalTitlePop {
+
+    0% {
+        opacity: 0;
+        transform: scale(.75);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes finalPhotoIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .final-page {
+        padding-top: 35px;
+    }
+
+    .final-title {
+        font-size: 43px;
+    }
+
+    .final-photo-wrapper {
+        width: 210px;
+        height: 255px;
+    }
+
+    .final-decoration.left {
+        left: -25px;
+    }
+
+    .final-decoration.right {
+        right: -25px;
+    }
+
+    .final-message {
+        padding: 25px 18px;
+    }
+
+    .final-message p {
+        font-size: 16px;
+    }
+
+    .forever-card p {
+        font-size: 16px;
+    }
+
+    .response-section {
+        padding: 28px 18px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     FLOATING ELEMENTS
+========================= -->
+
+<div class="float" style="left:5%; font-size:28px; animation-duration:13s;">💗</div>
+<div class="float" style="left:15%; font-size:22px; animation-duration:17s; animation-delay:2s;">✨</div>
+<div class="float" style="left:28%; font-size:30px; animation-duration:15s; animation-delay:5s;">🎀</div>
+<div class="float" style="left:45%; font-size:25px; animation-duration:18s; animation-delay:1s;">💕</div>
+<div class="float" style="left:62%; font-size:28px; animation-duration:14s; animation-delay:4s;">✨</div>
+<div class="float" style="left:78%; font-size:30px; animation-duration:19s;">💗</div>
+<div class="float" style="left:90%; font-size:24px; animation-duration:16s; animation-delay:3s;">🌸</div>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="container">
+
+        <div class="small-title">
+            Heyyyy Anuuuuuuu 👀💗
+        </div>
+
+        <h1 class="main-title">
+            I have something<br>
+            for youuuuu 🎀
+        </h1>
+
+        <p class="subtitle">
+            But first... you have to open it yourself 😭✨
+        </p>
+
+
+        <!-- PHOTOS -->
+
+        <div class="photos">
+
+            <!-- CHANGE THESE IMAGE NAMES -->
+            <img
+                src="anu1.jpeg"
+                class="photo"
+                alt="Anjali">
+
+            <img
+                src="anu2.jpeg"
+                class="photo"
+                alt="Anjali">
+
+        </div>
+
+
+        <!-- SURPRISE BOX -->
+
+        <div class="box-area">
+
+            <div class="box" id="giftBox">
+
+                <div class="box-bow">🎀</div>
+
+                <div class="box-lid"></div>
+
+                <div class="box-body"></div>
+
+            </div>
+
+            <p class="ready">
+                Anuuuuuuu... are you readyyy?? 👀🥹
+            </p>
+
+            <button class="open-btn" id="openBtn">
+                OPEN THIS BOX 🎁✨
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<!-- =========================
+     PAGE 2 — MAIN BIRTHDAY WISH
+========================= -->
+
+<section class="page birthday-page" id="page2">
+
+    <div class="birthday-container">
+
+        <!-- Small cute intro -->
+        <p class="birthday-intro">
+            Okayyyyy Anuuuuuuu... 😭🎀
+        </p>
+
+        <p class="birthday-intro">
+            Now comes the actual reason I made thissss 👀💗
+        </p>
+
+
+        <!-- BIG BIRTHDAY WISH -->
+
+        <h1 class="birthday-title">
+            HAPPIESTTT<br>
+            BIRTHDAYYYYY
+            <span>ANUUUUUUU</span> 🎂🥳💗
+        </h1>
+
+        <div class="bestie-tag">
+            MY CHASMISSSS 😂🫶💗
+        </div>
+
+
+        <!-- HER PHOTO -->
+
+        <div class="birthday-photo-wrapper">
+
+            <div class="sparkle sparkle1">✨</div>
+            <div class="sparkle sparkle2">💗</div>
+            <div class="sparkle sparkle3">🎀</div>
+
+            <img
+                src="anu-main.jpeg"
+                alt="Anjali"
+                class="birthday-photo">
+
+        </div>
+
+
+        <!-- WISHES -->
+
+        <div class="wishes">
+
+            <div class="wish-card">
+                <div class="wish-icon">🙏</div>
+                <p>
+                    First of all... <strong>God bless you alwaysss</strong>
+                    and keep you happy foreverrrr! 💗✨
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">🥳</div>
+                <p>
+                    Enjoy your day exactlyyy the way you wishhh!
+                    Today is completely YOUR dayyy! 🎂🎉💃🏻
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">😊</div>
+                <p>
+                    I hope you <strong>always keep smiling</strong>
+                    and never lose that crazy smile of yours! 🥹💗
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">🌸</div>
+                <p>
+                    I hope every little wish of yours comes true
+                    and you get everything you deserve! ✨🫶
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">🌟</div>
+                <p>
+                    I hope this new year of your life brings
+                    lots of happiness, success, fun and beautiful memories! 💕
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">😂</div>
+                <p>
+                    And haaa... please remain the same
+                    <strong>crazy chasmis</strong> you are 😂😭
+                    Don't suddenly become too serious after your birthday!
+                </p>
+            </div>
+
+
+            <div class="wish-card friendship-card">
+                <div class="wish-icon">🫂</div>
+                <p>
+                    And one of my biggest wishes is...
+                    <strong>I hope our friendship bond never breaks.</strong> 💗
+                </p>
+            </div>
+
+
+            <div class="wish-card">
+                <div class="wish-icon">🥹</div>
+                <p>
+                    From being friends since <strong>1st standard</strong>
+                    to all the memories we've made till now...
+                    I really hope we keep making manyyy more! 🫶✨
+                </p>
+            </div>
+
+
+            <div class="wish-card final-wish">
+                <div class="wish-icon">💗</div>
+                <p>
+                    Stay happy, stay blessed, keep smiling
+                    and keep being the amazing person you are. 🥹✨
+                </p>
+
+                <h2>
+                    Happiest Birthday Once Againnnn
+                    Anuuuuuuu!!! 🎂🥳💗
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- GO TO MEMORIES -->
+
+        <div class="memory-question">
+
+            <p>
+                Okayyy birthday girl... 👀🎀
+            </p>
+
+            <h2>
+                Ready to see some memories? 📸🥹
+            </h2>
+
+            <button id="memoryBtn">
+                OPEN OUR MEMORIES 📸💗
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PAGE 3 — OUR MEMORIES 📸💗
+     
+     PAGE 4 CONTENT WILL BE ADDED AFTER THIS PAGE.
+     DO NOT PASTE PAGE 4 CONTENT HERE YET.
+========================================================= -->
+
+<section class="page memories-page" id="page3">
+
+    <div class="memories-container">
+
+        <p class="memory-small-title">
+            Okay Anuuuuuuu... 🥹💗
+        </p>
+
+        <h1 class="memories-title">
+            OUR MEMORIES 📸✨
+        </h1>
+
+        <p class="memories-intro">
+            From little school memories to all the moments
+            we've collected along the way... 🫶
+        </p>
+
+
+        <!-- =========================
+             MEMORY 1
+        ========================== -->
+
+        <div class="memory-item memory-left">
+
+            <div class="memory-photo">
+                <img src="memory1.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 01</span>
+
+                <p>
+                    Some memories may look simple...
+                    but somehow they become the ones
+                    we remember forever. 🥹💗
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MEMORY 2
+        ========================== -->
+
+        <div class="memory-item memory-right">
+
+            <div class="memory-photo">
+                <img src="memory2.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 02</span>
+
+                <p>
+                    So many laughs 😂,
+                    so many random moments,
+                    and obviously a lot of chasmis behaviour 😭😂
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FRIENDSHIP MESSAGE
+        ========================== -->
+
+        <div class="friendship-message">
+
+            <div class="friendship-heart">
+                🫶
+            </div>
+
+            <p>
+                The best thing about memories isn't the picture...
+                it's the people who are standing beside you
+                when that picture is taken. 💗
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             MEMORY 3
+        ========================== -->
+
+        <div class="memory-item memory-left">
+
+            <div class="memory-photo rotate-photo">
+                <img src="memory3.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 03</span>
+
+                <p>
+                    Looking at these photos makes me realise
+                    how many little moments we've already shared. 🥹✨
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MEMORY 4
+        ========================== -->
+
+        <div class="memory-item memory-right">
+
+            <div class="memory-photo">
+                <img src="memory4.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 04</span>
+
+                <p>
+                    And honestly...
+                    I hope there are hundreds of more
+                    stupid, funny and unforgettable moments
+                    waiting for us. 😂💗
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MEMORY 5
+        ========================== -->
+
+        <div class="memory-item memory-left">
+
+            <div class="memory-photo">
+                <img src="memory5.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 05</span>
+
+                <p>
+                    Years can change a lot of things,
+                    but I hope this friendship remains
+                    one of those things that never changes. 🫂💗
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             MEMORY 6
+        ========================== -->
+
+        <div class="memory-item memory-right">
+
+            <div class="memory-photo">
+                <img src="memory6.jpeg" alt="Our memory">
+            </div>
+
+            <div class="memory-text">
+                <span>📸 Memory 06</span>
+
+                <p>
+                    And this is definitely not the last memory...
+                    because we still have sooo many more
+                    to make. 🥳📸💗
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FINAL MEMORY MESSAGE
+        ========================== -->
+
+        <div class="memory-ending">
+
+            <h2>
+                Here's to many more memories... 🥂💗
+            </h2>
+
+            <p>
+                More laughs 😂<br>
+                More random photos 📸<br>
+                More unforgettable moments ✨<br>
+                And more years of friendship 🫶
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             GO TO PAGE 4
+        ========================== -->
+
+        <div class="page4-button-area">
+
+            <p>
+                Waittt... 👀🎀
+            </p>
+
+            <h2>
+                One last surprise is waiting... 🎁
+            </h2>
+
+            <button id="page4Btn">
+                ONE LAST SURPRISE 💗✨
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             PAGE 4 CONTENT WILL BE PASTED HERE LATER.
+             
+             PAGE 4 = FINAL BIRTHDAY WISH + RESPONSE BOX
+             + FORMSPREE RESPONSE STORAGE
+             
+             DON'T ADD PAGE 4 YET.
+        ====================================================== -->
+        
+    </div>
+
+    
+
+</section>
+
+<!-- =========================================================
+     PAGE 4 — FINAL BIRTHDAY WISH + RESPONSE
+     
+     THIS IS THE FINAL PAGE OF THE WEBSITE.
+     
+     It contains:
+     - Final birthday wish
+     - Final photo
+     - Best-friend message
+     - Response box
+     - Formspree submission
+========================================================= -->
+
+<section class="page final-page" id="page4">
+
+    <div class="final-container">
+
+        <!-- TOP MESSAGE -->
+
+        <p class="final-small">
+            Anddddd finally... 🥹🎀
+        </p>
+
+        <p class="final-small">
+            We've reached the last surprise... 👀💗
+        </p>
+
+
+        <!-- BIG FINAL BIRTHDAY -->
+
+        <h1 class="final-title">
+            ONCE AGAINNNN... 🎉
+            <span>HAPPIEST BIRTHDAY</span>
+            <strong>ANUUUUUUU!!! 🎂🥳💗</strong>
+        </h1>
+
+
+        <!-- FINAL PHOTO -->
+
+        <div class="final-photo-wrapper">
+
+            <div class="final-decoration left">💗</div>
+            <div class="final-decoration right">✨</div>
+
+            <img
+                src="final-photo.jpeg"
+                alt="Anjali"
+                class="final-photo">
+
+        </div>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <div class="final-message">
+
+            <p>
+                God bless you alwaysss Anuuuuuuu 🙏💗
+            </p>
+
+            <p>
+                Keep smiling, keep enjoying your life,
+                and keep being the same amazing chasmis you are 😂🫶
+            </p>
+
+            <p>
+                I hope this year gives you lots of happiness,
+                success, beautiful moments and countless reasons
+                to smile. ✨🌸
+            </p>
+
+            <p>
+                And most importantly...
+                <strong>
+                    I hope our friendship bond stays the same forever. 🫂💗
+                </strong>
+            </p>
+
+            <p>
+                From 1st standard till now...
+                and hopefully for manyyy more years to come. 🥹🫶
+            </p>
+
+        </div>
+
+
+        <!-- FINAL FRIENDSHIP CARD -->
+
+        <div class="forever-card">
+
+            <div class="forever-icon">
+                🫶
+            </div>
+
+            <h2>
+                Best Friends Foreverrrr 💗
+            </h2>
+
+            <p>
+                More memories 📸<br>
+                More laughter 😂<br>
+                More bakchodi 😭<br>
+                More birthdays 🎂<br>
+                And a LOT more friendship years! ✨
+            </p>
+
+        </div>
+
+
+        <!-- RESPONSE SECTION -->
+
+        <div class="response-section">
+
+            <div class="response-icon">
+                💌
+            </div>
+
+            <h2>
+                Okayyy Anuuuuuuu... 👀
+            </h2>
+
+            <p>
+                Ab meri taraf se toh wish ho gayi 😂
+                <br>
+                Nowww I wanna know what YOU have to say! 🥹💗
+            </p>
+
+
+            <!--
+                IMPORTANT:
+                Replace YOUR_FORMSPREE_ID below with your
+                actual Formspree endpoint.
+                
+                Example:
+                https://formspree.io/f/xxxxxxxx
+            -->
+
+            <form
+                id="birthday-response-form"
+                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                method="POST">
+
+                <!-- Hidden information -->
+
+                <input
+                    type="hidden"
+                    name="Birthday_Girl"
+                    value="Anjali">
+
+                <input
+                    type="hidden"
+                    name="Nickname"
+                    value="Anuuuuuuu">
+
+                <input
+                    type="hidden"
+                    name="Message_Type"
+                    value="Birthday Website Response">
+
+
+                <!-- RESPONSE BOX -->
+
+                <label for="response">
+                    Your response 💗
+                </label>
+
+                <textarea
+                    id="response"
+                    name="Response"
+                    placeholder="Write whatever you want to say here... 🥹💌"
+                    required></textarea>
+
+
+                <button
+                    type="submit"
+                    id="response-submit">
+
+                    SEND MY RESPONSE 💗✨
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- AFTER SUBMISSION -->
+
+        <div
+            class="response-success"
+            id="response-success">
+
+            <div class="success-heart">
+                💗
+            </div>
+
+            <h2>
+                Awww Anuuuuuuu 🥹🫶
+            </h2>
+
+            <p>
+                Thank you for your responseee! 💌✨
+            </p>
+
+            <p>
+                Once againnn...
+            </p>
+
+            <h3>
+                HAPPIEST BIRTHDAYYYYY!!! 🎂🥳💗
+            </h3>
+
+            <p>
+                Stay happy, stay blessed and keep smilingggg! 🌸✨
+            </p>
+
+        </div>
+
+
+        <div class="final-goodbye">
+            Made with lots of friendship & bakchodi 😂💗
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+    // =========================================================
+    // PAGE NAVIGATION FUNCTION
+    // This makes sure only one page is active at a time.
+    // =========================================================
+
+    function goToPage(currentPage, nextPage) {
+
+        currentPage.classList.remove("active");
+
+        nextPage.classList.add("active");
+
+    }
+
+
+    // =========================================================
+    // GET PAGE ELEMENTS
+    // =========================================================
+
+    const openBtn = document.getElementById("openBtn");
+    const giftBox = document.getElementById("giftBox");
+
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("page2");
+    const page3 = document.getElementById("page3");
+
+
+    // =========================================================
+    // PAGE 1 → PAGE 2
+    // OPEN SURPRISE BOX
+    // =========================================================
+
+    openBtn.addEventListener("click", () => {
+
+        // Open the gift box animation
+        giftBox.classList.add("open");
+
+        // Change button text
+        openBtn.innerText = "OPENINGGG... 🎁✨";
+
+
+        // Wait for box animation
+        setTimeout(() => {
+
+            // Move from Page 1 to Page 2
+            goToPage(page1, page2);
+
+        }, 1000);
+
+    });
+
+
+    // =========================================================
+    // PAGE 2 → PAGE 3
+    // OPEN OUR MEMORIES
+    // =========================================================
+
+    const memoryBtn = document.getElementById("memoryBtn");
+
+    memoryBtn.addEventListener("click", () => {
+
+        // Move from Page 2 to Page 3
+        goToPage(page2, page3);
+
+    });
+
+
+    // =========================================================
+    // PAGE 3 → PAGE 4
+    //
+    // PAGE 4 WILL BE ADDED LATER.
+    //
+    // Page 4 will contain:
+    // - Final Happy Birthday Anuuuuuuu
+    // - Final friendship message
+    // - Response box
+    // - Formspree response storage
+    // =========================================================
+
+    const page4Btn = document.getElementById("page4Btn");
+
+    page4Btn.addEventListener("click", () => {
+
+        // PAGE 4 CONTENT WILL BE CONNECTED HERE LATER.
+
+        const page4 = document.getElementById("page4");
+
+        if (page4) {
+
+            goToPage(page3, page4);
+
+        }
+
+    });
+
+    // =========================================================
+// PAGE 4 — RESPONSE FORM
+// =========================================================
+
+const responseForm =
+    document.getElementById("birthday-response-form");
+
+const responseSubmit =
+    document.getElementById("response-submit");
+
+const responseSection =
+    document.querySelector(".response-section");
+
+const responseSuccess =
+    document.getElementById("response-success");
+
+
+responseForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    const responseText =
+        document.getElementById("response").value.trim();
+
+
+    // Don't allow empty response
+
+    if (responseText === "") {
+
+        alert("Anuuuuuuu, write somethinggg 😭💗");
+
+        return;
+    }
+
+
+    responseSubmit.disabled = true;
+
+    responseSubmit.innerText =
+        "Sendinggg... 🕊️💗";
+
+
+    try {
+
+        const formData =
+            new FormData(responseForm);
+
+
+        const result = await fetch(
+            responseForm.action,
+            {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+
+        if (result.ok) {
+
+            // Hide form
+
+            responseSection.style.display = "none";
+
+
+            // Show success message
+
+            responseSuccess.style.display = "block";
+
+
+            // Scroll to success message
+
+            responseSuccess.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } else {
+
+            throw new Error("Form submission failed");
+
+        }
+
+    } catch (error) {
+
+        responseSubmit.disabled = false;
+
+        responseSubmit.innerText =
+            "TRY AGAIN 💗";
+
+        alert(
+            "Something went wrong 😭 Please try again."
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
