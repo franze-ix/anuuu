@@ -17,6 +17,18 @@ html, body {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+button, .box, .photo, #music-toggle, #toggle-password-visibility {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.page {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -155,7 +167,8 @@ body {
 .photo {
     width: 145px;
     height: 175px;
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
     border-radius: 22px;
     padding: 7px;
     background: white;
@@ -414,7 +427,8 @@ body {
 .birthday-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
 
     padding: 9px;
     background: white;
@@ -849,7 +863,8 @@ body {
     width: 100%;
     height: 300px;
 
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
 
     border-radius: 15px;
 
@@ -1219,7 +1234,7 @@ body {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
     background: white;
 
@@ -1688,10 +1703,468 @@ body {
     }
 
 }
+
+
+/* =========================================================
+   PASSWORD SCREEN
+========================================================= */
+
+#password-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.95),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,190,215,.6),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #ffd6e7,
+            #fff0f6
+        );
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+
+#password-screen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.password-box {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.92);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 20px 50px rgba(210,70,130,.20);
+
+    border: 2px solid rgba(240,130,170,.2);
+
+    animation: passwordAppear 1s ease;
+}
+
+
+.password-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+    animation: passwordFloat 2s ease-in-out infinite;
+}
+
+
+.password-small {
+
+    color: #d95788;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.password-box h1 {
+
+    font-family: Georgia, serif;
+
+    color: #df3f7c;
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+
+.password-message {
+
+    color: #765565;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+.password-input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 14px;
+}
+
+
+#birthday-password {
+
+    width: 100%;
+
+    padding: 15px 48px 15px 18px;
+
+    border-radius: 50px;
+
+    border: 2px solid #f0b0c9;
+
+    outline: none;
+
+    background: #fffafd;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+
+#birthday-password:focus {
+
+    border-color: #df5b91;
+
+    box-shadow:
+        0 0 0 4px rgba(223,91,145,.10);
+}
+
+
+#toggle-password-visibility {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 6px;
+
+    transform: translateY(-50%);
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: rgba(240,130,170,.12);
+
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    color: #d9407c;
+
+    transition: background .25s ease, transform .2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+#toggle-password-visibility:hover,
+#toggle-password-visibility:focus-visible {
+
+    background: rgba(240,130,170,.25);
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+
+#toggle-password-visibility:active {
+
+    transform: translateY(-50%) scale(.92);
+}
+
+
+.password-box.shake {
+
+    animation: passwordShake .5s ease;
+}
+
+
+@keyframes passwordShake {
+
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(4px); }
+    30%, 50%, 70% { transform: translateX(-8px); }
+    40%, 60% { transform: translateX(8px); }
+}
+
+
+#password-btn {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef6099,
+            #d93c79
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(215,60,120,.25);
+
+    transition: .3s ease;
+}
+
+
+#password-btn:hover {
+
+    transform: scale(1.03);
+}
+
+
+#password-error {
+
+    display: none;
+
+    color: #df3f7c;
+
+    font-size: 14px;
+
+    margin-top: 15px;
+}
+
+
+@keyframes passwordAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.85) translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1) translateY(0);
+
+    }
+
+}
+
+
+@keyframes passwordFloat {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+
+}
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+#music-toggle {
+
+    position: fixed;
+
+    top: 18px;
+
+    right: 18px;
+
+    z-index: 9998;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.9);
+
+    box-shadow:
+        0 8px 20px rgba(210,70,130,.18);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+#music-toggle:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+@media(max-width:600px) {
+
+    #music-toggle {
+
+        width: 40px;
+
+        height: 40px;
+
+        top: 12px;
+
+        right: 12px;
+
+        font-size: 18px;
+
+    }
+
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- =========================================================
+     PASSWORD SCREEN
+========================================================= -->
+
+<div id="password-screen">
+
+    <div class="password-box">
+
+        <div class="password-icon">
+            🎀
+        </div>
+
+        <p class="password-small">
+            Heyyy Anuuuuuuu 👀💗
+        </p>
+
+        <h1>
+            Waittt... 🔐✨
+        </h1>
+
+        <p class="password-message">
+            This little surprise is only for youuu 🥹💗
+        </p>
+
+        <div class="password-input-wrapper">
+
+            <input
+                type="password"
+                id="birthday-password"
+                placeholder="Enter the secret password..."
+                autocomplete="off"
+                inputmode="text"
+            >
+
+            <button
+                type="button"
+                id="toggle-password-visibility"
+                title="Show/Hide password"
+                aria-label="Show or hide password">
+                👁️
+            </button>
+
+        </div>
+
+        <button id="password-btn">
+            OPEN MY SURPRISE 🎁💗
+        </button>
+
+        <p id="password-error">
+            Please enter the correct password 😭💗
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     BACKGROUND MUSIC
+========================================================= -->
+
+<audio
+    id="birthday-music"
+    src="birthday.mp3"
+    loop>
+</audio>
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+    id="music-toggle"
+    title="Music">
+
+    🔊
+
+</button>
 
 <!-- =========================
      FLOATING ELEMENTS
@@ -2283,7 +2756,6 @@ body {
             <p>
                 More memories 📸<br>
                 More laughter 😂<br>
-                More bakchodi 😭<br>
                 More birthdays 🎂<br>
                 And a LOT more friendship years! ✨
             </p>
@@ -2402,7 +2874,7 @@ body {
 
 
         <div class="final-goodbye">
-            Made with lots of friendship & bakchodi 😂💗
+            Made with lots of friendship  💗
         </div>
 
     </div>
@@ -2603,6 +3075,172 @@ responseForm.addEventListener("submit", async (event) => {
     }
 
 });
+
+
+// =========================================================
+// PASSWORD + MUSIC
+// =========================================================
+
+const correctPassword = "jayuanuu";
+
+const passwordScreen =
+    document.getElementById("password-screen");
+
+const passwordInput =
+    document.getElementById("birthday-password");
+
+const passwordBtn =
+    document.getElementById("password-btn");
+
+const passwordError =
+    document.getElementById("password-error");
+
+const passwordBox =
+    document.querySelector(".password-box");
+
+const toggleVisibilityBtn =
+    document.getElementById("toggle-password-visibility");
+
+const birthdayMusic =
+    document.getElementById("birthday-music");
+
+const musicToggle =
+    document.getElementById("music-toggle");
+
+
+// =========================================================
+// OPEN WEBSITE
+// =========================================================
+
+function openBirthdayWebsite() {
+
+    passwordScreen.classList.add("hide");
+
+    // Start music after user's button click
+    birthdayMusic.volume = 0.45;
+
+    birthdayMusic.play()
+        .then(() => {
+
+            musicToggle.innerText = "🔊";
+
+        })
+        .catch(() => {
+
+            musicToggle.innerText = "🔇";
+
+        });
+
+}
+
+
+// =========================================================
+// PASSWORD CHECK
+// =========================================================
+
+function checkPassword() {
+
+    const enteredPassword =
+        passwordInput.value;
+
+    if (enteredPassword === correctPassword) {
+
+        passwordError.style.display = "none";
+
+        openBirthdayWebsite();
+
+    } else {
+
+        passwordError.style.display = "block";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+        // Little shake so it FEELS wrong 😭
+        passwordBox.classList.remove("shake");
+
+        // Force reflow so the animation can replay
+        void passwordBox.offsetWidth;
+
+        passwordBox.classList.add("shake");
+
+    }
+
+}
+
+
+// BUTTON
+
+passwordBtn.addEventListener(
+    "click",
+    checkPassword
+);
+
+
+// =========================================================
+// SHOW / HIDE PASSWORD (EYE ICON)
+// =========================================================
+
+toggleVisibilityBtn.addEventListener(
+    "click",
+    () => {
+
+        const isHidden =
+            passwordInput.type === "password";
+
+        passwordInput.type =
+            isHidden ? "text" : "password";
+
+        toggleVisibilityBtn.innerText =
+            isHidden ? "🙈" : "👁️";
+
+        passwordInput.focus();
+
+    }
+);
+
+
+// ENTER KEY
+
+passwordInput.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (event.key === "Enter") {
+
+            checkPassword();
+
+        }
+
+    }
+);
+
+
+// =========================================================
+// MUSIC ON / OFF
+// =========================================================
+
+musicToggle.addEventListener(
+    "click",
+    () => {
+
+        if (birthdayMusic.paused) {
+
+            birthdayMusic.play();
+
+            musicToggle.innerText = "🔊";
+
+        } else {
+
+            birthdayMusic.pause();
+
+            musicToggle.innerText = "🔇";
+
+        }
+
+    }
+);
 
 </script>
 
